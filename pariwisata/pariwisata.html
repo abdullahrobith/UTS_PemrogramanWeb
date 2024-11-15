@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisata Guci Tegal</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+   
+    /* Tema Gelap */
+.dark-theme {
+    background-color: #222;
+    color: #f1f1f1;
+}
+
+/* Warna latar belakang header dan footer untuk tema gelap */
+.dark-theme header, .dark-theme footer {
+    background: #444;
+    color: #f1f1f1;
+}
+
+/* Warna navigasi untuk tema gelap */
+.dark-theme nav {
+    background: linear-gradient(90deg, #555, #666);
+}
+
+.dark-theme nav ul li a {
+    color: #f1f1f1;
+}
+
+.dark-theme nav ul li a:hover {
+    background-color: #777; /* Warna lebih terang untuk hover */
+}
+
+/* Konten utama untuk tema gelap */
+.dark-theme main {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+.dark-theme section {
+    background-color: #444; /* Warna latar belakang konten */
+    color: #f1f1f1; /* Warna teks konten */
+}
+
+/* Tabel untuk tema gelap */
+.dark-theme table, .dark-theme th, .dark-theme td {
+    background-color: #555; /* Warna latar belakang tabel */
+    color: #f1f1f1; /* Warna teks tabel */
+    border-color: #666; /* Warna border tabel */
+}
+
+/* Kartu daya tarik wisata untuk tema gelap */
+.dark-theme .card {
+    background-color: #555;
+    color: #f1f1f1;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Menambah shadow */
+}
+
+
+
+    /* Header */
+    header {
+    background: linear-gradient(135deg, #32CD32 0%, #228B22 100%);
+    color: white;
+    text-align: center;
+    padding: 2em 0; /* Mengurangi padding atas dan bawah */
+    font-family: 'Merriweather', serif; /* Gunakan font Merriweather untuk header */
+    }
+
+    /* Wrapper for logo and text */
+    header .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap; /* Ensure responsive layout */
+    }
+
+    /* Logo Styling */
+    header img {
+      width: 200px;
+      height: auto;
+    }
+
+    header h1 {
+    font-size: 2.2em; /* Menyesuaikan ukuran font judul */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    header h1 {
+    font-size: 2.2em; /* Menyesuaikan ukuran font judul */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    input {
+        padding: 8px;
+        margin-top: 10px;
+    }
+    /* Navigation */
+    nav {
+      background: linear-gradient(90deg, #228B22, #32CD32); /* Gradasi Hijau */
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #006400; /* Warna hijau gelap saat hover */
+      transform: scale(1.1);
+    }
+
+    /* Main Content */
+    main {
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 2em;
+      background: white;
+      padding: 2em;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #228B22; /* Warna Hijau untuk judul */
+      margin-bottom: 15px;
+      font-family: 'Merriweather', serif; /* Gunakan font Merriweather untuk sub-judul */
+    }
+
+    p {
+      margin-bottom: 1em;
+      line-height: 1.8;
+      font-family:'Lucida Sans';
+    }
+
+    /* Cards for daya tarik wisata */
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      color: #228B22; /* Warna Hijau untuk card title */
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+
+    table, th, td {
+      border: 1px solid #32CD32; /* Border hijau */
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f8ff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+    }
+
+    /* About Section */
+    #about {
+      text-align: center;
+    }
+
+    #about ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    #about ul li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <!-- Logo -->
+      <img src="guci_outbound-removebg-preview.png" alt="Logo Wisata Guci">
+      <!-- Teks -->
+      <div>
+        <h1>Wisata Guci Tegal</h1>
+        <p>Destinasi Wisata Alam dan Air Panas di Kaki Gunung Slamet</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#konten">Konten</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Konten Utama -->
+  <main>
+    <!-- Home -->
+    <h2 id="greetingMessage" style="transition: opacity 0.5s; text-align: center; font-size: 1.5em; font-family: 'Courier New', Courier, monospace;"></h2>
+    <section id="home">
+      <h2>Selamat Datang Di Website Wisata Guci</h2>
+      <p>Wisata Guci merupakan taman wisata air panas yang ada di daerah Tegal. 
+        Kawasan ini berada di hamparan bukit berada mengelilingi taman wisata Guci dan mengelilingi Gunung Slamet yang menjulang tinggi di hadapan mata 
+        sehingga membuat suasana semakin nyaman. Untuk itu, menarik untuk membahas lebih dalam mengenai profil wisata Guci. Taman wisata air panas yang asri dan sejuk serta air terjun di sana mengubah pemandangan jadi semakin indah. 
+        Selain itu, profil wisata Guci memiliki tanah lapang yang bisa digunakan untuk berkemah. Pemandian air panas dan air terjun Guci memiliki tawaran lain seperti menunggang kuda mengelilingi taman wisata Guci dan pernak-pernik khas yang dibuat oleh tangan kreatif warga di sekitar taman wisata.</p>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const greetingElement = document.getElementById("greetingMessage");
+    const greetings = ["✨Selamat Datang di Wisata Guci!✨", "😉Nikmati Suasana Sejuk dan Asri😉", "🙌Jelajahi Keindahan Alam Guci!🙌"];
+    let index = 0;
+
+    function showGreeting() {
+        greetingElement.textContent = greetings[index];
+        greetingElement.style.opacity = 1; // Munculkan teks
+
+        setTimeout(() => {
+            greetingElement.style.opacity = 0; // Sembunyikan teks
+            index = (index + 1) % greetings.length; // Ganti teks ke yang berikutnya
+            setTimeout(showGreeting, 500); // Jeda sebelum teks berikutnya muncul
+        }, 2000); // Teks tampil selama 2 detik
+    }
+
+    showGreeting();
+});
+    </script> 
+    <!-- Konten -->
+    <section id="konten">
+      <h2>Sebelum memasuki konten, silahkan masukkan nama anda : </h2>
+        <input type="text" id="nameInput" placeholder="Nama Anda">
+        <button onclick="greetUser()">KLIK DISINI</button>
+        <p id="greeting"></p>
+      <p>Wisata Guci Tegal terletak di Kaki Gunung Slamet. Alamatnya berada di Desa Guci, Kecamatan Bumijawa, Kabupaten Tegal, Jawa Tengah. 
+        Jarak wisata Guci Tegal dari alun-alun Kabupaten ada sekitar 43 kilometer dengan jarak tempuh 1 jam 39 menit</p>
+      <h3>Harga Tiket Masuk</h3>
+      <table>
+        <tr>
+          <th>Lokasi</th>
+          <th>Harga Tiket</th>
+        </tr>
+        <tr>
+          <td>Hot Guci Waterboom</td>
+          <td>Rp. 40.000</td>
+        </tr>
+        <tr>
+          <td>Jembatan Kaca</td>
+          <td>Rp. 10.000</td>
+        </tr>
+        <tr>
+          <td>Pancuran 13</td>
+          <td>Rp. 4.000</td>
+        </tr>
+        <tr>
+          <td>Baron Hill</td>
+          <td>Rp. 15.000</td>
+        </tr>
+      </table>
+      <h3>Jam Operasional</h3>
+      <p>Jam buka wisata di Guci berbeda-beda, rata-rata mulai buka pukul 08.00-17.00. 
+        Kecuali untuk kawasan penginapan dan area camping. 
+        Untuk kondisi normal, wisata Guci Tegal buka setiap hari selama 1 minggu.</p>
+      <h3>Daya Tarik Wisata</h3>
+      <div class="cards">
+        <div class="card">
+          <img src="air.jpg" alt="Pemandian Air Panas">
+          <h3>Pemandian Air Panas</h3>
+          <p>Tidak hanya 1 tempat pemandian air panas yang ada di objek wisata Guci tetapi ada juga 3 lokasi pemandian yang jadi rekomendasi untuk dikunjungi saat ada di sekitar wisata Guci, 
+            berikut di antaranya: Pancuran 13 Pancuran 7 Guciku Hot Waterboom Sebagai informasi, Guciku Hot Waterboom jadi primadona sebagai tempat wisata untuk keluarga. 
+            Tidak hanya air panas alami, pengunjung bisa menikmati sejumlah wahana wisata pendukung.</p>
+        </div>
+        <div class="card">
+          <img src="jembatan.jpeg" alt="Jembatan Kaca">
+          <h3>Jembatan Kaca</h3>
+          <p>Profil wisata Guci berikutnya memiliki jembatan kaca Baron Hill, Spot ini menyajikan nuansa romantik dan instagramable. Spot jembatan kaca sedang tren saat ini. 
+            Untuk bisa naik ke atas jembatan kaca, para pengunjung akan dibatasi demi kenyamanan dan keamanan.</p>
+        </div>
+        <div class="card">
+          <img src="ilustrasi-air-terjun.jpeg" alt="Air Terjun">
+          <h3>Air Terjun</h3>
+          <p>Ada 2 air terjun yang cukup terkenal di Wisata Guci Tegal, di antaranya sebagai berikut: Air Terjun Jedor atau Coban Jedor Air Terjun Hangan Kembar Itulah profil wisata Guci Tegal yang perlu diketahui oleh wisatawan yang akan berlibur ke sana. 
+            Dengan banyaknya ragam fasilitas yang disediakan dan memiliki daya tarik tersendiri, destinasi wisata ini patut dipertimbangkan.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function greetUser() {
+          const name = document.getElementById("nameInput").value;
+          const greetingMessage = name 
+              ? `<h2>Halo, ${name}!</h2>` 
+              : "<h2>INPUT NAMA dulu lahh biar keren</h2>";
+          document.getElementById("greeting").innerHTML = greetingMessage;
+      }
+  </script>
+
+    <!-- About -->
+    <section id="about">
+      <h2>Informasi Kontak</h2>
+    <ul>
+      <li>Instagram: exploretegal</li>
+      <li>Telepon: +62 812-3456-7890</li>
+      <li>Alamat: Jl. Raya Guci, Tegal</li>
+      <li>
+          Website: <a href="https://katadata.co.id/lifestyle/varia/6458a85466723/profil-wisata-guci-tegal-dari-fasilitas-hingga-daya-tariknya" target="_blank">Profil Wisata Guci Tegal</a>
+      </li>
+      <p> </p>
+      <button onclick="toggleTheme()">Ubah Tema</button>
+  </ul>
+    </section>
+    <script>
+     function toggleTheme() {
+      // Toggle kelas 'dark-theme' pada elemen body
+      document.body.classList.toggle('dark-theme');     
+      // Ubah teks tombol sesuai tema
+      const button = document.querySelector("button");
+      }
+  </script>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; UTS ABDULLAH ROBITHUL HASAN. All rights reserved.</p>
+  </footer>
+</body>
+</html>
